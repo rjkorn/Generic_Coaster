@@ -16,15 +16,15 @@ $fn=50;
 
 wallT = 2;
 
-boardW = 57.4;
-boardH = 41;
-boardD = 2;
+boardW = 70.5;
+boardH = 51.4;
+boardD = 3;
 
-holeW = 49.7;
-holeH = 33.8;
+holeW = 63.95;
+holeH = 40.5;
 
-pinD = 2.4;
-pinL = 2;
+pinD = 3;
+pinL = 4;
 
 outerW = boardW + 2*wallT;
 outerH = boardH + 2*wallT;
@@ -36,8 +36,8 @@ union(){
 		translate([0, 0, wallT/2]) cube([boardW, boardH, boardD+1],center=true);
 	}
 
-	translate([holeW/2, holeH/2, 0]) cylinder(h=wallT+pinL,d=pinD);
-	translate([-holeW/2, holeH/2, 0]) cylinder(h=wallT+pinL,d=pinD);
-	translate([holeW/2, -holeH/2, 0]) cylinder(h=wallT+pinL,d=pinD);
-	translate([-holeW/2, -holeH/2, 0]) cylinder(h=wallT+pinL,d=pinD);
+	translate([holeW/2, holeH/2, -wallT]) cylinder(h=wallT+pinL,d=pinD);
+	translate([-holeW/2, holeH/2, -wallT]) cylinder(h=wallT+pinL,d=pinD);
+	translate([holeW/2, -holeH/2, -wallT]) cylinder(h=wallT+pinL,d=pinD);
+	translate([-holeW/2, -holeH/2, -wallT]) cylinder(h=wallT+pinL,d=pinD);
 }
